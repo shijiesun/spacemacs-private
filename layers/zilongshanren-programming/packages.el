@@ -36,7 +36,7 @@
         (python :location built-in)
         (emacs-lisp :location built-in)
         ;; clojure-mode
-        company
+        ;; company
         (eldoc :location built-in)
         dumb-jump
         graphviz-dot-mode
@@ -521,15 +521,15 @@
       (bind-key* "s-{" #'paredit-wrap-curly)
       )))
 
-(defun zilongshanren-programming/post-init-company ()
-  (progn
-    (setq company-minimum-prefix-length 1
-          company-idle-delay 0.08)
+;; (defun zilongshanren-programming/post-init-company ()
+;;   (progn
+;;     (setq company-minimum-prefix-length 1
+;;           company-idle-delay 0.08)
 
-    (when (configuration-layer/package-usedp 'company)
-      (spacemacs|add-company-backends :modes shell-script-mode makefile-bsdmake-mode sh-mode lua-mode nxml-mode conf-unix-mode json-mode graphviz-dot-mode))
-    ))
-(defun zilongshanren-programming/post-init-company-c-headers ()
+;;     (when (configuration-layer/package-usedp 'company)
+;;       (spacemacs|add-company-backends :modes shell-script-mode makefile-bsdmake-mode sh-mode lua-mode nxml-mode conf-unix-mode json-mode graphviz-dot-mode))
+;;     ))
+ (defun zilongshanren-programming/post-init-company-c-headers ()
   (progn
     (setq company-c-headers-path-system
           (quote
