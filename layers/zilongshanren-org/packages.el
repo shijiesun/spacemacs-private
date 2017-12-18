@@ -14,12 +14,12 @@
 (defconst zilongshanren-org-packages
   '(
     (org :location built-in)
-    org-mac-link
+    ;; org-mac-link
     org-pomodoro
     deft
-    (blog-admin :location (recipe
-                           :fetcher github
-                           :repo "codefalling/blog-admin"))
+    ;; (blog-admin :location (recipe
+    ;;                        :fetcher github
+    ;;                       :repo "codefalling/blog-admin"))
     ;; org-tree-slide
     ;; ox-reveal
     ;; worf
@@ -28,20 +28,18 @@
     )
   )
 
-(defun zilongshanren-org/init-blog-admin ()
-  (use-package blog-admin
-    :defer t
-    :commands blog-admin-start
-    :init
-    (progn
-      ;; do your configuration here
-      (setq blog-admin-backend-type 'hexo
-            blog-admin-backend-path blog-admin-dir
-            blog-admin-backend-new-post-with-same-name-dir nil
-            blog-admin-backend-hexo-config-file "_config.yml"
-            )
-      (add-hook 'blog-admin-backend-after-new-post-hook 'find-file)
-      )))
+;; (defun zilongshanren-org/init-blog-admin ()
+;;   (use-package blog-admin
+;;     :defer t
+;;     :commands blog-admin-start
+;;     :init
+;;     (progn
+;;       ;; do your configuration here
+;;       (setq blog-admin-backend-type 'hexo
+;;             blog-admin-backend-path blog-admin-dir
+;;             blog-admin-backend-new-post-with-same-name-dir nil
+;;             blog-admin-backend-hexo-config-file "_config.yml")
+;;       (add-hook 'blog-admin-backend-after-new-post-hook 'find-file))))
 
 (defun zilongshanren-org/post-init-org-pomodoro ()
   (progn
@@ -419,15 +417,15 @@ holding contextual information."
 
       )))
 
-(defun zilongshanren-org/init-org-mac-link ()
-  (use-package org-mac-link
-    :commands org-mac-grab-link
-    :init
-    (progn
-      (add-hook 'org-mode-hook
-                (lambda ()
-                  (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link))))
-    :defer t))
+;; (defun zilongshanren-org/init-org-mac-link ()
+;;   (use-package org-mac-link
+;;     :commands org-mac-grab-link
+;;     :init
+;;     (progn
+;;       (add-hook 'org-mode-hook
+;;                 (lambda ()
+;;                   (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link))))
+;;     :defer t))
 
 (defun zilongshanren-org/post-init-ox-reveal ()
   (setq org-reveal-root "file:///Users/guanghui/.emacs.d/reveal-js"))
