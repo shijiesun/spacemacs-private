@@ -1,6 +1,8 @@
 * I forked this config from zilongshanren
 his config is used in mac, I fix the errors when it used in debian.
+
 I am learning his config.
+
 I will change his config to my own config.
 
 * My personal Emacs configuration
