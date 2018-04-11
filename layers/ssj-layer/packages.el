@@ -32,6 +32,7 @@
 (defconst ssj-layer-packages
   '(
     bing-dict
+    org-brain
     )
   "The list of Lisp packages required by the ssj-layer layer.
 
@@ -66,5 +67,14 @@ Each entry is either:
     :init
     (spacemacs/set-leader-keys "oq" 'bing-dict-brief)
     )
+)
+
+(defun ssj-layer/init-org-brain ()
+  (use-package org-brain
+    :ensure t
+    :init
+    (with-eval-after-load 'evil
+      (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
   )
+)
 ;;; packages.el ends here
