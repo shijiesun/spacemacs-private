@@ -55,7 +55,6 @@
                                       dictionary-mode
                                       erc-mode
                                       browse-kill-ring-mode
-                                      etags-select-mode
                                       dired-mode
                                       help-mode
                                       text-mode

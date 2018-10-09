@@ -32,7 +32,6 @@
         lua-mode
         (cc-mode :location built-in)
         ;; flycheck-clojure
-        etags-select
         (python :location built-in)
         (emacs-lisp :location built-in)
         ;; clojure-mode
@@ -165,8 +164,7 @@
     (web-mode-toggle-current-element-highlight)
     (web-mode-dom-errors-show))
   (setq company-backends-web-mode '((company-dabbrev-code
-                                     company-keywords
-                                     company-etags)
+                                     company-keywords)
                                     company-files company-dabbrev)))
 
 
@@ -284,7 +282,6 @@
     (add-hook 'web-mode-hook 'my-setup-develop-environment)
 
     (spacemacs|define-jump-handlers js2-mode)
-    (add-hook 'spacemacs-jump-handlers-js2-mode 'etags-select-find-tag-at-point)
 
     (setq company-backends-js2-mode '((company-dabbrev-code :with company-keywords company-etags)
                                       company-files company-dabbrev))
