@@ -31,6 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     go
+     nginx
      ivy
      better-defaults
      ranger
@@ -93,7 +95,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(sicp)
+   dotspacemacs-additional-packages '(sicp go-autocomplete)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages
@@ -358,6 +360,10 @@ values."
   )
 
 (defun dotspacemacs/user-config ()
+(require 'go-autocomplete)
+	(require 'auto-complete-config)
+	(ac-config-default)
+
   ;;解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
     (when (and (spacemacs/system-is-mac) window-system)
